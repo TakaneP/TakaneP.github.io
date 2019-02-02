@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/new-post/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/two-sum/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TakaneP">
@@ -251,7 +251,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/02/new-post/" itemprop="url">new_post</a></h1>
+                <a class="post-title-link" href="/2019/02/02/two-sum/" itemprop="url">new_post</a></h1>
         
 
         <div class="post-meta">
@@ -303,7 +303,22 @@
       
         
           
-            <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">       <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.size()<span class="number">-1</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; nums.size();j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i]+nums[j] == target) &#123;        </span><br><span class="line">                    ans.push_back(i);</span><br><span class="line">                    ans.push_back(j);</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+            <p>Leetcode problem 1</p>
+<p>input: an array of integers<br>output: indices of the two numbers such that they add up to a specific target.</p>
+<p>I intuitively used the brute force to see if it would be TLE.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">       <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.size()<span class="number">-1</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; nums.size();j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i]+nums[j] == target) &#123;        </span><br><span class="line">                    ans.push_back(i);</span><br><span class="line">                    ans.push_back(j);</span><br><span class="line">                    i = nums.size();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>runtime: 76ms , faster than 19.64% c++ submissions<br>memory usage: 1.2MB, less than 84.60% c++ submissions</p>
+<p>time complexity: O(n^2)<br>space complexity: O(1) </p>
+<p>The worst case of brute force is the last two elements consisting of the sum.</p>
+<p>Brute force may be slowest, but it is intuitive to come up with and save space.</p>
+<p>But if you want to be faster than others, you must use space to save time.</p>
+<p>One simple way in c++ is the hash table.</p>
+<p>In c++, the STL map is an implement of the hash table.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="comment">//use map to store value and its index</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; hash;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.size();i++) &#123;</span><br><span class="line">            <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line">            <span class="comment">//find value exists or not</span></span><br><span class="line">            iter = hash.find(target-nums[i]);</span><br><span class="line">            <span class="comment">//if exists</span></span><br><span class="line">            <span class="keyword">if</span>(iter != hash.end()) &#123;</span><br><span class="line">                ans.push_back(iter-&gt;second);</span><br><span class="line">                ans.push_back(i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            hash[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>runtime: 4ms , faster than 99.94% c++ submissions<br>memory usage: 1.5MB, less than 32.12% c++ submissions</p>
+<p>time complexity: O(n)<br>space complexity: O(n) </p>
+<p>The worst case is the last two elements consisting of the sum, and the hash table stores n-1 value.</p>
+
           
         
       
@@ -422,8 +437,8 @@
       
         
           
-            <p>Start to use Hexo+github page to record something I learned.</p>
-<p>Hope I can be better.</p>
+            <p>Start to use Hexo+github page to record something I learned and can improve my english writing skill.</p>
+<p>Hope I can grow better.</p>
 
           
         
