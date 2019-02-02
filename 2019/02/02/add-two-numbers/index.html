@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Leetcode problem 1 input: an array of integersoutput: indices of the two numbers such that they add up to a specific target. I intuitively used the brute force to see if it would be TLE. 1234567891011">
+<meta name="description" content="input: two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit.output: Add the two numbers and return i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="new_post">
-<meta property="og:url" content="http://yoursite.com/2019/02/02/two-sum/index.html">
+<meta property="og:title" content="add two numbers">
+<meta property="og:url" content="http://yoursite.com/2019/02/02/add-two-numbers/index.html">
 <meta property="og:site_name" content="Progress">
-<meta property="og:description" content="Leetcode problem 1 input: an array of integersoutput: indices of the two numbers such that they add up to a specific target. I intuitively used the brute force to see if it would be TLE. 1234567891011">
+<meta property="og:description" content="input: two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit.output: Add the two numbers and return i">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-02-02T07:13:22.273Z">
+<meta property="og:updated_time" content="2019-02-02T09:43:31.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="new_post">
-<meta name="twitter:description" content="Leetcode problem 1 input: an array of integersoutput: indices of the two numbers such that they add up to a specific target. I intuitively used the brute force to see if it would be TLE. 1234567891011">
+<meta name="twitter:title" content="add two numbers">
+<meta name="twitter:description" content="input: two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit.output: Add the two numbers and return i">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/02/two-sum/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/02/add-two-numbers/">
 
 
 
 
 
-  <title>new_post | Progress</title>
+  <title>add two numbers | Progress</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/two-sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/add-two-numbers/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TakaneP">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">new_post</h1>
+          <h1 class="post-title" itemprop="name headline">add two numbers</h1>
         
 
         <div class="post-meta">
@@ -261,7 +261,7 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-02-02T03:38:01+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-02-02T15:14:37+08:00">
                 2019-02-02
               </time>
             
@@ -299,21 +299,10 @@
       
 
       
-        <p>Leetcode problem 1</p>
-<p>input: an array of integers<br>output: indices of the two numbers such that they add up to a specific target.</p>
-<p>I intuitively used the brute force to see if it would be TLE.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">       <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.size()<span class="number">-1</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; nums.size();j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i]+nums[j] == target) &#123;        </span><br><span class="line">                    ans.push_back(i);</span><br><span class="line">                    ans.push_back(j);</span><br><span class="line">                    i = nums.size();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>runtime: 76ms , faster than 19.64% c++ submissions<br>memory usage: 1.2MB, less than 84.60% c++ submissions</p>
-<p>time complexity: O(n^2)<br>space complexity: O(1) </p>
-<p>The worst case of brute force is the last two elements consisting of the sum.</p>
-<p>Brute force may be slowest, but it is intuitive to come up with and save space.</p>
-<p>But if you want to be faster than others, you must use space to save time.</p>
-<p>One simple way in c++ is the hash table.</p>
-<p>In c++, the STL map is an implement of the hash table.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="comment">//use map to store value and its index</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; hash;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.size();i++) &#123;</span><br><span class="line">            <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line">            <span class="comment">//find value exists or not</span></span><br><span class="line">            iter = hash.find(target-nums[i]);</span><br><span class="line">            <span class="comment">//if exists</span></span><br><span class="line">            <span class="keyword">if</span>(iter != hash.end()) &#123;</span><br><span class="line">                ans.push_back(iter-&gt;second);</span><br><span class="line">                ans.push_back(i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            hash[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>runtime: 4ms , faster than 99.94% c++ submissions<br>memory usage: 1.5MB, less than 32.12% c++ submissions</p>
-<p>time complexity: O(n)<br>space complexity: O(n) </p>
-<p>The worst case is the last two elements consisting of the sum, and the hash table stores n-1 value.</p>
+        <p>input: two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit.<br>output: Add the two numbers and return it as a linked list.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> digit1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> digit2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        ListNode* ans = <span class="literal">NULL</span>;</span><br><span class="line">        ListNode* tail = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        	<span class="comment">//two list has been travelled</span></span><br><span class="line">            <span class="keyword">if</span>(l1 == <span class="literal">NULL</span> &amp;&amp; l2 == <span class="literal">NULL</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//travel two list</span></span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">NULL</span>) &#123;</span><br><span class="line">                digit1 = l1-&gt;val;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125; </span><br><span class="line">            <span class="keyword">else</span> digit1 = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">NULL</span>) &#123;</span><br><span class="line">                digit2 = l2-&gt;val;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> digit2 = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//plus two digits in the lists and the carry</span></span><br><span class="line">            <span class="keyword">int</span> temp = digit1 + digit2 + carry;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//set carry if temp &gt; 9</span></span><br><span class="line">            <span class="keyword">if</span>(temp &gt; <span class="number">9</span>) &#123;</span><br><span class="line">                carry = <span class="number">1</span>;</span><br><span class="line">                temp -= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> carry = <span class="number">0</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//construct new node            </span></span><br><span class="line">            ListNode* num = <span class="keyword">new</span> ListNode(temp);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//use tail to memory the last element of the ans list</span></span><br><span class="line">            <span class="keyword">if</span>(ans == <span class="literal">NULL</span>) &#123;</span><br><span class="line">                ans = num;</span><br><span class="line">                tail = num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                tail-&gt;next = num;</span><br><span class="line">                tail = num;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//consider the situation like 0-&gt;9 + 0-&gt;9 = 0-&gt;8-&gt;1</span></span><br><span class="line">        <span class="keyword">if</span>(carry == <span class="number">1</span>) &#123;</span><br><span class="line">            ListNode* num = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">            tail-&gt;next = num;</span><br><span class="line">            tail = num;</span><br><span class="line">        &#125;</span><br><span class="line">         <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Runtime: 20 ms, 99.01% of cpp<br>Memory Usage: 1.7 MB, 46.97% of cpp</p>
+<p>if length of list1 is n, length of list2 is m<br>time complexity: O(max(n,m))<br>space complexity: O(max(n,m))</p>
 
       
     </div>
@@ -338,8 +327,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/02/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/02/02/two-sum/" rel="next" title="new_post">
+                <i class="fa fa-chevron-left"></i> new_post
               </a>
             
           </div>
@@ -347,10 +336,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/02/add-two-numbers/" rel="prev" title="add two numbers">
-                add two numbers <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
