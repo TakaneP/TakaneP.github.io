@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Leetcode problem 1 input: an array of integersoutput: indices of the two numbers such that they add up to a specific target. I intuitively used the brute force to see if it would be TLE. 1234567891011">
+<meta name="description" content="Leetcode problem 5 input: a string s (length &amp;lt; 1000)output: the longest palindromic substring  palindromic string: the string equals to the reversed string of itself ex: aba, bbbb, cdedc solution:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="two sum">
-<meta property="og:url" content="http://yoursite.com/2019/02/02/two-sum/index.html">
+<meta property="og:title" content="longest palindromic substring">
+<meta property="og:url" content="http://yoursite.com/2019/02/04/longest-palindromic-substring/index.html">
 <meta property="og:site_name" content="Progress">
-<meta property="og:description" content="Leetcode problem 1 input: an array of integersoutput: indices of the two numbers such that they add up to a specific target. I intuitively used the brute force to see if it would be TLE. 1234567891011">
+<meta property="og:description" content="Leetcode problem 5 input: a string s (length &amp;lt; 1000)output: the longest palindromic substring  palindromic string: the string equals to the reversed string of itself ex: aba, bbbb, cdedc solution:">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-02-02T10:01:00.800Z">
+<meta property="og:updated_time" content="2019-02-06T13:19:22.246Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="two sum">
-<meta name="twitter:description" content="Leetcode problem 1 input: an array of integersoutput: indices of the two numbers such that they add up to a specific target. I intuitively used the brute force to see if it would be TLE. 1234567891011">
+<meta name="twitter:title" content="longest palindromic substring">
+<meta name="twitter:description" content="Leetcode problem 5 input: a string s (length &amp;lt; 1000)output: the longest palindromic substring  palindromic string: the string equals to the reversed string of itself ex: aba, bbbb, cdedc solution:">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/02/two-sum/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/04/longest-palindromic-substring/">
 
 
 
 
 
-  <title>two sum | Progress</title>
+  <title>longest palindromic substring | Progress</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/two-sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/04/longest-palindromic-substring/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TakaneP">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">two sum</h1>
+          <h1 class="post-title" itemprop="name headline">longest palindromic substring</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-02-02T03:38:01+08:00">
-                2019-02-02
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-02-04T16:56:29+08:00">
+                2019-02-04
               </time>
             
 
@@ -299,21 +299,12 @@
       
 
       
-        <p>Leetcode problem 1</p>
-<p>input: an array of integers<br>output: indices of the two numbers such that they add up to a specific target.</p>
-<p>I intuitively used the brute force to see if it would be TLE.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">       <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.size()<span class="number">-1</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; nums.size();j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i]+nums[j] == target) &#123;        </span><br><span class="line">                    ans.push_back(i);</span><br><span class="line">                    ans.push_back(j);</span><br><span class="line">                    i = nums.size();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>runtime: 76ms , faster than 19.64% c++ submissions<br>memory usage: 1.2MB, less than 84.60% c++ submissions</p>
-<p>time complexity: O(n^2)<br>space complexity: O(1) </p>
-<p>The worst case of brute force is the last two elements consisting of the sum.</p>
-<p>Brute force may be slowest, but it is intuitive to come up with and save space.</p>
-<p>But if you want to be faster than others, you must use space to save time.</p>
-<p>One simple way in c++ is the hash table.</p>
-<p>In c++, the STL map is an implement of the hash table.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="comment">//use map to store value and its index</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; hash;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.size();i++) &#123;</span><br><span class="line">            <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line">            <span class="comment">//find value exists or not</span></span><br><span class="line">            iter = hash.find(target-nums[i]);</span><br><span class="line">            <span class="comment">//if exists</span></span><br><span class="line">            <span class="keyword">if</span>(iter != hash.end()) &#123;</span><br><span class="line">                ans.push_back(iter-&gt;second);</span><br><span class="line">                ans.push_back(i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            hash[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>runtime: 4ms , faster than 99.94% c++ submissions<br>memory usage: 1.5MB, less than 32.12% c++ submissions</p>
-<p>time complexity: O(n)<br>space complexity: O(n) </p>
-<p>The worst case is the last two elements consisting of the sum, and the hash table stores n-1 value.</p>
+        <p>Leetcode problem 5</p>
+<p>input: a string s (length &lt; 1000)<br>output: the longest palindromic substring </p>
+<p>palindromic string: the string equals to the reversed string of itself</p>
+<p>ex: aba, bbbb, cdedc</p>
+<p>solution: using  Manacher’s algorithm</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> p[<span class="number">1001</span>*<span class="number">2</span>] = &#123;<span class="number">0</span>&#125;,mx = <span class="number">0</span>,id = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> ans,str;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//insert special characters into string s</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>;i &lt; s.length()*<span class="number">2</span>;i = i+<span class="number">2</span>) &#123;</span><br><span class="line">            str += <span class="string">"#"</span>;</span><br><span class="line">            str += s[j];</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        str += <span class="string">"#"</span>;</span><br><span class="line">        <span class="comment">//Manacher's algorithm</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; str.length();i++) &#123;</span><br><span class="line">            p[i] = (mx &gt; i)? min(p[<span class="number">2</span>*id-i],mx-i) : <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>((i + p[i]) &lt; (str.length()+<span class="number">1</span>) &amp;&amp; (i - p[i]) &gt;= <span class="number">0</span> &amp;&amp; str[i + p[i]] == str[i - p[i]] ) p[i]++;</span><br><span class="line">            <span class="keyword">if</span>((i + p[i]) &gt; mx) &#123;</span><br><span class="line">                mx = i + p[i];</span><br><span class="line">                id = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//find the largest value of p (the central point of the longest palindromic substring)</span></span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>,pos = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; str.length()+<span class="number">1</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(p[i] &gt;= max) &#123;</span><br><span class="line">                max = p[i];</span><br><span class="line">                pos = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//get the longest palindromic substring</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = (pos-p[pos]+<span class="number">1</span>);i &lt; (pos+p[pos]);i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i &amp; <span class="number">1</span>) ans += str[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -338,8 +329,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/02/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/02/04/reverse-bits/" rel="next" title="reverse bits">
+                <i class="fa fa-chevron-left"></i> reverse bits
               </a>
             
           </div>
@@ -347,10 +338,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/02/add-two-numbers/" rel="prev" title="add two numbers">
-                add two numbers <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
